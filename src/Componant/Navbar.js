@@ -16,7 +16,7 @@ const Navbar = () => {
                             <li><Link to="/calender">Calendar</Link></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a class="btn btn-ghost normal-case text-xl">Jod-Task</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
@@ -26,9 +26,9 @@ const Navbar = () => {
                         <li><Link to="/calender">Calendar</Link></li>
                     </ul>
                 </div>
-                <div class="navbar-end">
+                {/* <div class="navbar-end">
                     <a class="btn">Get started</a>
-                </div>
+                </div> */}
             </div>
         </div>
     );
