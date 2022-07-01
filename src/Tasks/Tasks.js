@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Task from '../Componant/Task/Task';
-
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
@@ -10,6 +9,7 @@ const Tasks = () => {
     }, [])
     return (
         <div>
+            <h2 className='text test text-3xl font-bold text-center'>Hear is some daily task of Web Developer : {tasks.length}</h2>
             {tasks.map(task => <Task
                 key={task.id}
                 task={task}
@@ -17,5 +17,4 @@ const Tasks = () => {
         </div>
     );
 };
-
 export default Tasks;

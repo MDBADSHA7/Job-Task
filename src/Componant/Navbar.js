@@ -16,7 +16,7 @@ const Navbar = () => {
                             <li><Link to="/calender">Calendar</Link></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-xl">Jod-Task</a>
+                    <a class="btn btn-ghost normal-case text-xl">Job-Task</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal p-0">
