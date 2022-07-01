@@ -6,11 +6,13 @@ import { format } from 'date-fns';
 const Calender = () => {
     const [date, setDate] = useState(new Date());
     return (
-        <div className='calender'>
-            <DayPicker
-                mode="single"
-                selected={date}
-                onSelect={setDate} />
+        <div>
+            <div className='calender'>
+                <DayPicker
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate} />
+            </div>
             <span className='text-red-500 text-4xl font-bold'><b>Today is : {format(date, 'PP')}</b></span>
         </div>
     );
