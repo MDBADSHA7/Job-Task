@@ -4,7 +4,7 @@
 
 #Server site Github link by [https://github.com/MDBADSHA7/Job-Task-Server](https://github.com/MDBADSHA7/Job-Task-Server)
 
-## Live Site Link: [https://manufacturer-website-ce0e5.web.app/](https://manufacturer-website-ce0e5.web.app/)
+## Live Site Link: [https://graceful-alpaca-72e641.netlify.app/](https://graceful-alpaca-72e641.netlify.app/)
 
 * I use Tailwind and raw css.
 * I use Deysi Ui CSS freamwork.

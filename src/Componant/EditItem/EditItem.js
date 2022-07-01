@@ -7,7 +7,7 @@ const EditItem = () => {
         const task = event.target.task.value;
         console.log(task)
         const user = { task };
-        fetch('http://localhost:5000/task', {
+        fetch('https://enigmatic-taiga-19091.herokuapp.com/task', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

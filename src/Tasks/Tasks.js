@@ -3,7 +3,7 @@ import Task from '../Componant/Task/Task';
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/task')
+        fetch('https://enigmatic-taiga-19091.herokuapp.com/task')
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [])
