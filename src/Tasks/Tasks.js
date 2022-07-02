@@ -1,5 +1,6 @@
 import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
+import { NavLink } from "react-router-dom";
 import Task from '../Componant/Task/Task';
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -9,21 +10,22 @@ const Tasks = () => {
             .then(data => setTasks(data))
     }, [])
     const taskDelete = id => {
-        const process = window.confirm('Are you sure delete this task');
-        if (process) {
+        const proceed = window.confirm('Are you sure delete this task');
+        if (proceed) {
             console.log('delete', id)
-            const url = `https://enigmatic-taiga-19091.herokuapp.com/task/${id}`;
+            const url = `http://localhost:5000/task/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        console.log('deleted');
+                        console.log('Deleted');
+                        const remaining = tasks.filter(task => task._id !== id);
+                        setTasks(remaining);
                     }
                 })
         }
-
     }
     return (
         <div>
@@ -50,7 +52,9 @@ const Tasks = () => {
                             <td>{task.task}</td>
                             <td>
                                 <button >
-                                    <PencilIcon className='trash-Icon'></PencilIcon>
+                                    <NavLink to={`/edittask/${task._id}`}>
+                                        <PencilIcon className='trash-Icon'></PencilIcon>
+                                    </NavLink>
                                 </button>
                             </td>
                             <td>

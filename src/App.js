@@ -7,6 +7,7 @@ import ToDo from './Componant/ToDo/ToDo';
 import NotFound from './Componant/NotFound/NotFound';
 import CompletedTask from './Componant/CompletedTask/CompletedTask';
 import About from './Componant/About/About';
+import EditTask from './Componant/EditTask/EditTask';
 function App() {
   return (
     <div className="px-12">
@@ -14,9 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/completedTask" element={<CompletedTask></CompletedTask>}></Route>
-        <Route path="/todo" element={<ToDo></ToDo>}></Route>
+        <Route path="/todo/add" element={<ToDo></ToDo>}></Route>
         <Route path="/calender" element={<Calender></Calender>}></Route>
         <Route path="/aboutme" element={<About></About>}></Route>
+        <Route path="/edittask/:id" element={<EditTask></EditTask>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
