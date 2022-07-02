@@ -1,3 +1,4 @@
+import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
 import Task from '../Componant/Task/Task';
 const Tasks = () => {
@@ -7,13 +8,60 @@ const Tasks = () => {
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [])
+    const taskDelete = id => {
+        const process = window.confirm('Are you sure delete this task');
+        if (process) {
+            console.log('delete', id)
+            const url = `https://enigmatic-taiga-19091.herokuapp.com/task/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        console.log('deleted');
+                    }
+                })
+        }
+
+    }
     return (
         <div>
-            <h2 className='text test text-3xl font-bold text-center'>Hear is some daily task of Web Developer : {tasks.length}</h2>
-            {tasks.map(task => <Task
-                key={task.id}
-                task={task}
-            ></Task>)}
+            <h2 className='text test text-3xl font-bold text-center mb-5'>Hear is some daily task of Web Developer : {tasks.length}</h2>
+            <div class="overflow-x-auto mb-5">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>SL-NO</th>
+                            <th>Check-Out</th>
+                            <th>Task</th>
+                            <th>Edit-Task</th>
+                            <th>Delete-Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tasks.map((task, index) => <tr>
+                            <th>{index + 1}</th>
+                            <th><div class="form-control">
+                                <label class="cursor-pointer label">
+                                    <input type="checkbox" name="" class="checkbox checkbox-accent" id="" />
+                                </label>
+                            </div></th>
+                            <td>{task.task}</td>
+                            <td>
+                                <button >
+                                    <PencilIcon className='trash-Icon'></PencilIcon>
+                                </button>
+                            </td>
+                            <td>
+                                <button onClick={() => taskDelete(task._id)}>
+                                    <TrashIcon className='trash-Icon'></TrashIcon>
+                                </button>
+                            </td>
+                        </tr>)}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

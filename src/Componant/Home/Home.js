@@ -27,7 +27,8 @@ const Home = () => {
                                 important tasks at the bottom. It is helpful in planning our
                                 daily schedules.
                             </b>
-                            <div className="flex justify-center">
+                            <br />
+                            <div className="flex justify-center mt-10">
                                 <NavLink to="/todo" className="btn btn-primary text-white">
                                     <MdAddCircleOutline className="mr-1 text-xl" /> Add Your First
                                     ToDo Task
