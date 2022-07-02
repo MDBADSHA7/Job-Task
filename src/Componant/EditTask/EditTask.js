@@ -15,7 +15,9 @@ const EditTask = () => {
         const task = event.target.task.value;
         console.log(task)
         const updateUser = { task };
-        fetch(`https://enigmatic-taiga-19091.herokuapp.com/task/${id}`, {
+        //Send to server
+        const url = `https://enigmatic-taiga-19091.herokuapp.com/task/${id}`;
+        fetch(url, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -24,10 +26,8 @@ const EditTask = () => {
         })
             .then(res => res.json())
             .then(data => {
-                const newTask = [...task, data];
-                setTask(newTask);
-                console.log(data);
-                alert('Daily task added successfully')
+                console.log('Success', data);
+                alert('Edit task successfully')
                 event.target.reset();
             })
     }

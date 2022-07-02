@@ -29,7 +29,7 @@ const Home = () => {
                             </b>
                             <br />
                             <div className="flex justify-center mt-10">
-                                <NavLink to="/todo" className="btn btn-primary text-white">
+                                <NavLink to="/todo/add" className="btn btn-primary text-white">
                                     <MdAddCircleOutline className="mr-1 text-xl" /> Add Your First
                                     ToDo Task
                                 </NavLink>

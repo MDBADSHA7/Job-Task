@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './EditItem.css'
 const EditItem = () => {
-    const [task, setTask] = useState([]);
     const handleAddRestoke = event => {
         event.preventDefault();
         const task = event.target.task.value;
-        console.log(task)
+        console.log(task);
         const user = { task };
         fetch('https://enigmatic-taiga-19091.herokuapp.com/task', {
             method: 'POST',
@@ -16,9 +15,7 @@ const EditItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                const newTask = [...task, data];
-                setTask(newTask);
-                console.log(data);
+                console.log('success', data);
                 alert('Daily task added successfully')
                 event.target.reset();
             })

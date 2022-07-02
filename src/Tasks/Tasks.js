@@ -13,7 +13,7 @@ const Tasks = () => {
         const proceed = window.confirm('Are you sure delete this task');
         if (proceed) {
             console.log('delete', id)
-            const url = `http://localhost:5000/task/${id}`;
+            const url = `https://enigmatic-taiga-19091.herokuapp.com/task/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
